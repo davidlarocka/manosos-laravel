@@ -9,11 +9,21 @@ use App\Models\User;
 class LoginController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->users_by_default("Armando Casas", 1, "armando@mañosos.com");
+        $this->users_by_default("Carlos Pinto", 2, "carlos@mañosos.com");
+    }
+
+    public function show_login(){
+        return view('login');
+    }
+
     public function send_data(Request $request)
     {
 
         $user = new User;
-        $usuario = $user::where('nombre', '=', $request->input('user_id'))->first();    
+        $usuario = $user::where('correo', '=', $request->input('user_id'))->first();    
         
         if($usuario == null){
             return redirect()->route('login', ["status" => "Usuario no existe"]);
@@ -56,6 +66,24 @@ class LoginController extends Controller
         Session::flush();
         Session::regenerate();
         return view('login');
+    }
+
+    private function users_by_default($nombre, $perfil, $correo)
+    {   
+        
+        $user = new User;
+        $usuario = $user::where('nombre', '=', $nombre)->first();    
+        
+        //validar que no exista
+        if($usuario == null){
+            $user->nombre = $nombre;
+            $user->password = "123456";
+            $user->perfil = $perfil;
+            $user->correo = $correo;
+            $user->save();
+        }
+
+        return;
     }
 
 }

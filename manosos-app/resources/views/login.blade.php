@@ -36,7 +36,7 @@
           <br>
           <form action="/send_login" class="form-inline" method="post"> 
             @csrf 
-            <input class="form-control"type="text" name="user_id" id="user_id" placeholder="Usuario" />
+            <input class="form-control"type="text" name="user_id" id="user_id" placeholder="correo" />
             <br>
             <input class="form-control" type="password" name="password" id="password" placeholder="Password" />
             <br>
