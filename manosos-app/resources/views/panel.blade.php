@@ -84,6 +84,11 @@
         </div>
       </div>
     </div>
+    @if(request()->get('status'))
+        <div class="alert alert-warning">
+          {{ request()->get('status') }}
+        </div>
+    @endif
     <script src="/js/utils.js"></script>
     <script>
     @if($perfil == '1')

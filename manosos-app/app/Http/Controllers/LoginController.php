@@ -58,7 +58,7 @@ class LoginController extends Controller
         $user->perfil = 2;
         $user->correo = $request->input('correo');
         $user->save();
-        return redirect()->route('login', ["status" => "registrado ok"]);
+        return redirect()->route('login', ["status" => "registrado con éxito"]);
     }
 
     public function log_out(Request $request)

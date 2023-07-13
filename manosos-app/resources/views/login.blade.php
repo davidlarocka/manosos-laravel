@@ -56,6 +56,11 @@
             <input type="submit" class="btn btn-success" value="Registrar" />
           </form>
         </div>
+        @if(request()->get('status'))
+        <div class="alert alert-warning">
+          {{ request()->get('status') }}
+        </div>
+        @endif
       </div>
     </div>
   </body>
