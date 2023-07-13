@@ -29,7 +29,7 @@
       <div class="tab-content">
         <div id="home" class="container tab-pane active">
           <br>
-          <h3>HOME</h3>
+          <h3>Todo list </h3>
           <p>Bienvenido al sistema de registro de tareas de mañosos spa. si ya tienes cuenta hacer click en Ingresar, sino Registrate.</p>
         </div>
         <div id="menu1" class="container tab-pane fade">
@@ -37,7 +37,9 @@
           <form action="/send_login" class="form-inline" method="post"> 
             @csrf 
             <input class="form-control"type="text" name="user_id" id="user_id" placeholder="Usuario" />
+            <br>
             <input class="form-control" type="password" name="password" id="password" placeholder="Password" />
+            <br>
             <input type="submit" class="btn btn-primary" value="Enviar" />
           </form>
         </div>
@@ -46,8 +48,11 @@
           <form action="/sign_in" class="form-inline" method="post"> 
             @csrf 
             <input class="form-control" type="text" name="user_id" id="user_id" placeholder="Nombre de usuario" />
+            <br>
             <input class="form-control" type="text" name="correo" id="correo" placeholder="Correo" />
+            <br>
             <input class="form-control"  type="password" name="password" id="password" placeholder="Password" />
+            <br>
             <input type="submit" class="btn btn-success" value="Registrar" />
           </form>
         </div>
