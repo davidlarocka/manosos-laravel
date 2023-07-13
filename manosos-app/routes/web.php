@@ -16,7 +16,7 @@ use App\Http\Controllers\TaskController;
 |
 */
 
-Route::get('/', function () { return view('welcome');});
+Route::get('/', [LoginController::class, 'show_login'])->name('login');
 Route::get('/login', [LoginController::class, 'show_login'])->name('login');
 Route::post('/send_login', [LoginController::class, 'send_data']);
 Route::post('/sign_in', [LoginController::class, 'sign_in']);
